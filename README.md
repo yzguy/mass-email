@@ -7,7 +7,7 @@ Markdown-Email
 
 To quickly create HTML emails, pass in data from external source (ex. csv file), and send out emails in bulk.
 
-`Usage: ./markdown-email.py <markdown file> <csv file>
+`Usage: ./markdown-email.py <markdown file> <csv file>  
     <markdown file> - path to markdown file ( email.md )
     <csv file> - path to csv data file ( data.csv )
 
