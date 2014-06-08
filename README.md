@@ -52,7 +52,7 @@ Notice the `if statement` to handle there being a promo code or not, this is how
 ## Script Execution
 Executing the script is pretty straight forward, you only need to pass in two arguments, these being a path to Markdown file, and the CSV file.
 
-ex. `./markdown-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
+ex. `./markdown-to-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
 
 After that, you will need to enter your Google Email credentials (they are not stored), and a Subject for the emails.
 
