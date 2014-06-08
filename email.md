@@ -1,18 +1,14 @@
 Applits
 ======
 
-~~strikethrough~~
+> Thank you for your investment in Applits!
+> We would like to give you an update on our progress and what is on the roadmap
 
-`this is a code sample`
+1. Site Redesign
+2. Implementing SSL Encryption Site-wide
 
-`import socket  
+Here is an example of AppleScript:
 
-s = socket.socket()  
-s.bind(('', 1080))  
-s.listen(5)  
-
-while True:  
-    c, addr = s.accept()  
-    c.close()  
-s.close()  
-`
+    tell application "Foo"
+        beep
+    end tell

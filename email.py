@@ -1,7 +1,9 @@
 #!venv/bin/python
-import markdown, sys
+import markdown, sys, csv, getpass
 
 if (len(sys.argv) > 0):
+    username = raw_input("Username: ")
+    password = getpass.getpass("Password: ")
     mdfile = sys.argv[1]
     #csvfile = sys.argv[2]
 
