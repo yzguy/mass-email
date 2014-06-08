@@ -1,4 +1,4 @@
-Markdown-to-Email
+Mass-Email
 ==============
 
 Have you ever wanted to send out essentially the same email out to a bunch of people, but changing a little information? Well, with Markdown-Email you can do that.  
@@ -52,12 +52,12 @@ Notice the `if statement` to handle there being a promo code or not, this is how
 ## Script Execution
 Executing the script is pretty straight forward, you only need to pass in two arguments, these being a path to Markdown file, and the CSV file.
 
-ex. `./markdown-to-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
+ex. `./mass-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
 
 After that, you will need to enter your Google Email credentials (they are not stored), and a Subject for the emails.
 
 ```
-root@host: ~$ ./markdown-to-email.py example-template.md example-data.csv 
+root@host: ~$ ./mass-email.py example-template.md example-data.csv 
 Username: admin@admin.com
 Password: 
 Subject: Yzguy Product Promo    
