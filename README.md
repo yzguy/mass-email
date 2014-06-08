@@ -29,7 +29,8 @@ You do not need to have every column for each contact, but if you don't you must
 The Markdown file uses existing Markdown Syntax (https://help.github.com/articles/markdown-basics), but now you will be able to use Jinja2 templating syntax to add in your per-contact information.
 
 ```
-    # Yzguy Product Promo
+    Yzguy Product Promo
+    ===================
 
     Hello {{ name }},
 
@@ -39,6 +40,9 @@ The Markdown file uses existing Markdown Syntax (https://help.github.com/article
     For being a long time customer, here is a promo code for a free product:  
         * Promo Code: {{ promocode }}  
     {% endif}
+
+    Thank you,
+        Adam
 ```  
 
 Notice the `if statement` to handle there being a promo code or not, this is how you should handle fields that are not present for all contacts.
