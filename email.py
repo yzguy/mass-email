@@ -1,9 +1,19 @@
 #!venv/bin/python
-import markdown
+import markdown, sys
 
-f = open("email.md", "r")
-md = f.read()
-f.close()
+if (len(sys.argv) > 0):
+    mdfile = sys.argv[1]
+    #csvfile = sys.argv[2]
 
-html = markdown.markdown(md)
-print html
+    f = open(mdfile, "r")
+    md = f.read()
+    f.close()
+
+    html = markdown.markdown(md)
+    print html
+else:
+    print """
+Usage: ./email.py <markdown file> <csv file>
+    <markdown file> - path to markdown file ( ~/email.md )
+    <csv file> - path to csv data file ( ~/data.csv )
+    """
