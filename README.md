@@ -54,6 +54,7 @@ Executing the script is pretty straight forward, you only need to pass in two ar
 
 ex. `./mass-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
 
+You may enter `verbose` as the third argument to output the raw emails after they are sent.  
 After that, you will need to enter your Google Email credentials (they are not stored), and a Subject for the emails.
 
 ```
