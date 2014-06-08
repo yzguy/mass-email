@@ -3,7 +3,7 @@ import markdown, sys, csv, getpass, smtplib
 from email.mime.text import MIMEText
 from jinja2 import Template
 
-if (len(sys.argv) == 3):
+if (len(sys.argv) >= 3):
     username = raw_input("Username: ")
     password = getpass.getpass("Password: ")
     subject = raw_input("Subject: ")
@@ -31,7 +31,10 @@ if (len(sys.argv) == 3):
         server.sendmail(username, [row['email']], msg.as_string())
         server.close()
 
-        print "Email sent to: %s" % row['email']
+	if (sys.argv[3] == "verbose"):
+	    print msg
+
+        print "Email sent to: %s\n" % row['email']
 	emails_sent += 1
 
     print "\nTotal Emails Sent:", emails_sent
@@ -40,6 +43,7 @@ else:
 Usage: ./markdown-email.py <markdown file> <csv file>
     <markdown file> - path to markdown file ( email.md )
     <csv file> - path to csv data file ( data.csv )
+    <verbose> - type verbose to see emails in raw format
 
-    You must enter your email address and password.
+    You must enter your email address, password, and subject for email.
     """
