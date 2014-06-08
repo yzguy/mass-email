@@ -1,7 +1,7 @@
 Mass-Email
 ==============
 
-Have you ever wanted to send out essentially the same email out to a bunch of people, but changing a little information? Well, with Markdown-Email you can do that.  
+Have you ever wanted to send out essentially the same email out to a bunch of people, but changing a little information? Well, with Mass-Email you can do that.  
 
 All you need to do is provide a CSV file with the different information, and a Markdown template referencing the columns in the CSV file.
 
@@ -49,7 +49,7 @@ Thank you,
 
 Notice the `if statement` to handle there being a promo code or not, this is how you should handle fields that are not present for all contacts.
 
-## Script Execution
+### Script Execution
 Executing the script is pretty straight forward, you only need to pass in two arguments, these being a path to Markdown file, and the CSV file.
 
 ex. `./mass-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
