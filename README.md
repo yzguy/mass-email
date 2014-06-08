@@ -55,3 +55,14 @@ Executing the script is pretty straight forward, you only need to pass in two ar
 ex. `./markdown-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
 
 After that, you will need to enter your Google Email credentials (they are not stored), and a Subject for the emails.
+
+```
+root@host: ~$ ./markdown-email.py example-template.md example-data.csv 
+Username: admin@admin.com
+Password: 
+Subject: Yzguy Product Promo    
+Email sent to: asmith@smith.com
+Email sent to: mmark@mark.com
+
+Total Emails Sent: 2
+```

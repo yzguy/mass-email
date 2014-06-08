@@ -1,10 +1,14 @@
-Markdown Test
-=============
+Yzguy Product Promo
+===================
 
-> Hello Everyone!! This is a {{ name }}  
+Hello {{ name }},
 
-* Company: {{ company }}  
+We would like to thank you and {{ company }} for your continued loyalty.
 
-{% if promocode %}  
-* Promo Code: {{ promocode }}  
+{% if promocode %}
+For being a long time customer, here is a promo code for a free product:
+    * Promo Code: {{ promocode }}
 {% endif %}
+
+Thank you,
+  Adam
