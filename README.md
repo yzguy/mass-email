@@ -23,22 +23,22 @@ After this, each row will be the information per contact.
 `Marky Mark,mmark@mark.com,Mark Co,`
 
 
-
 You do not need to have every column for each contact, but if you don't you must handle that in your Markdown template with an `if statement`. This will be shown later (Notice Marky Mark does not have a promo code).
 
 ### Markdown File Syntax
 The Markdown file uses existing Markdown Syntax (https://help.github.com/articles/markdown-basics), but now you will be able to use Jinja2 templating syntax to add in your per-contact information.
 
-```# Yzguy Product Promo
+```
+    # Yzguy Product Promo
 
-Hello {{ name }},
+    Hello {{ name }},
 
-We would like to thank you and {{ company }} for continued loyalty.
+    We would like to thank you and {{ company }} for continued loyalty.
 
-{% if promocode %}
-For being a long time customer, here is a promo code for a free product:  
-    * Promo Code: {{ promocode }}  
-{% endif}
+    {% if promocode %}
+    For being a long time customer, here is a promo code for a free product:  
+        * Promo Code: {{ promocode }}  
+    {% endif}
 ```  
 
 Notice the `if statement` to handle there being a promo code or not, this is how you should handle fields that are not present for all contacts.
