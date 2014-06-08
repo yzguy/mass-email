@@ -1,4 +1,4 @@
-Markdown-Email
+Markdown-to-Email
 ==============
 
 Have you ever wanted to send out essentially the same email out to a bunch of people, but changing a little information? Well, with Markdown-Email you can do that.  
@@ -57,7 +57,7 @@ ex. `./markdown-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
 After that, you will need to enter your Google Email credentials (they are not stored), and a Subject for the emails.
 
 ```
-root@host: ~$ ./markdown-email.py example-template.md example-data.csv 
+root@host: ~$ ./markdown-to-email.py example-template.md example-data.csv 
 Username: admin@admin.com
 Password: 
 Subject: Yzguy Product Promo    
