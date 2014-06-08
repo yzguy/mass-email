@@ -19,8 +19,10 @@ The first row of the CSV file will be the variable name for the different inform
 
 After this, each row will be the information per contact.
 
-`Adam Smith,asmith@smith.com,Yzguy,12345`  
-`Marky Mark,mmark@mark.com,Mark Co,`
+| name | email | company | promocode |
+| ---- | ----- | ------- | --------- |
+|Adam Smith | asmith@smith.com | Yzguy | 12345 | 
+|Marky Mark|mmark@mark.com|Mark Co| |
 
 
 You do not need to have every column for each contact, but if you don't you must handle that in your Markdown template with an `if statement`. This will be shown later (Notice Marky Mark does not have a promo code).
