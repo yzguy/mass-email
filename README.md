@@ -7,9 +7,8 @@ Markdown-Email
 
 To quickly create HTML emails, pass in data from external source (ex. csv file), and send out emails in bulk.
 
-> Usage: ./markdown-email.py <markdown file> <csv file>  
->    <markdown file> - path to markdown file
->    <csv file> - path to csv data file
+> "Usage: ./markdown-email.py <markdown file> <csv file>"  
+
 
 The markdown file uses standard markdown syntax, but with Jinja2 templating. This allows you to input data from the csv file based on the column title.
 
