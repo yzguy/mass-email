@@ -3,7 +3,7 @@ import markdown, sys, csv, getpass, smtplib
 from email.mime.text import MIMEText
 from jinja2 import Template
 
-if (len(sys.argv) > 0):
+if (len(sys.argv) == 3):
     username = raw_input("Username: ")
     password = getpass.getpass("Password: ")
     subject = raw_input("Subject: ")
