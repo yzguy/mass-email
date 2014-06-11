@@ -3,40 +3,44 @@ import markdown, sys, csv, getpass, smtplib
 from email.mime.text import MIMEText
 from jinja2 import Template
 
-if (len(sys.argv) >= 3):
-    username = raw_input("Username: ")
-    password = getpass.getpass("Password: ")
-    subject = raw_input("Subject: ")
-    emails_sent = 0
-
-    markd_file = open(sys.argv[1], "r")
-    md = markd_file.read()
-    markd_file.close()
-
-    csv_file = csv.DictReader(open(sys.argv[2], 'r'))
-
-    for row in csv_file:
-        template = Template(md)
-        rendered_template = template.render(row)
-        html = markdown.markdown(rendered_template)
-
-        msg = MIMEText(html, 'html')
-        msg['Subject'] = subject
-        msg['From'] = username
-        msg['To'] = row['email']
-
+def login():
+    try:
         server = smtplib.SMTP("smtp.gmail.com:587")
         server.starttls()
         server.login(username, password)
-        server.sendmail(username, [row['email']], msg.as_string())
+        return server
+    except smtplib.SMTPAuthenticationError:
+        print "Incorrect Username or Password"
         server.close()
+        sys.exit(1)
 
-	if (sys.argv[3] == "verbose"):
-	    print msg
+if (len(sys.argv) == 3):
+    username = raw_input("Username: ") + "@gmail.com"
+    password = getpass.getpass("Password: ")
+    name = raw_input("Name: ")
+    subject = raw_input("Subject: ")
 
-        print "Email sent to: %s\n" % row['email']
-	emails_sent += 1
+    server = login()
+    emails_sent = 0
 
+    with open(sys.argv[1], 'r') as md_file:
+        md_template = Template(md_file.read())
+
+    with open(sys.argv[2], 'r') as csv_file:
+        csv_data = csv.DictReader(csv_file)
+        for row in csv_data:
+            rendered_template = md_template.render(row)
+            html = markdown.markdown(rendered_template)
+
+            msg = MIMEText(html, 'html')
+            msg['Subject'] = subject
+            msg['From'] = username
+            msg['To'] = row['email']
+
+            server.sendmail(username, [row['email']], msg.as_string())
+            print "Email sent to: %s" % row['email']
+            emails_sent += 1
+    server.close()
     print "\nTotal Emails Sent:", emails_sent
 else:
     print """
