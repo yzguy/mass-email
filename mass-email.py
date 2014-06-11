@@ -34,7 +34,7 @@ if (len(sys.argv) == 3):
 
             msg = MIMEText(html, 'html')
             msg['Subject'] = subject
-            msg['From'] = username
+            msg['From'] = name
             msg['To'] = row['email']
 
             server.sendmail(username, [row['email']], msg.as_string())
