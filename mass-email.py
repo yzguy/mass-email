@@ -6,8 +6,8 @@ from email.mime.text import MIMEText
 from jinja2 import Template
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-m', '--markdown', help='Path to Markdown Template')
-parser.add_argument('-c', '--csv', help='Path to CSV file')
+parser.add_argument('-m', '--markdown', help='Path to Markdown Template', required=True)
+parser.add_argument('-c', '--csv', help='Path to CSV file', required=True)
 args = parser.parse_args() 
 
 markdownf = args.markdown
