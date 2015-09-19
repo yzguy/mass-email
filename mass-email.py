@@ -28,7 +28,7 @@ def login(username, password):
         server.close()
         sys.exit(1)
 
-server = login(username, password, smtp_server, smtp_port)
+server = login(username, password)
 emails_sent = 0
 
 with open(markdownf, 'r') as md_file:
