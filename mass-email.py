@@ -8,14 +8,17 @@ from jinja2 import Template
 parser = argparse.ArgumentParser()
 parser.add_argument('-m', '--markdown', help='Path to Markdown Template', required=True)
 parser.add_argument('-c', '--csv', help='Path to CSV file', required=True)
+parser.add_argument('-v', '--verbose', help='Write out emails')
 args = parser.parse_args() 
 
 markdownf = args.markdown
 csvf = args.csv
+verbose = False
 username = raw_input("Username: ")
 password = getpass.getpass("Password: ")
 name = raw_input("Name: ")
 subject = raw_input("Subject: ")
+emails_sent = 0
 
 def login(username, password):
     try:
@@ -29,7 +32,6 @@ def login(username, password):
         sys.exit(1)
 
 server = login(username, password)
-emails_sent = 0
 
 with open(markdownf, 'r') as md_file:
     md_template = Template(md_file.read())
@@ -44,6 +46,9 @@ with open(csvf, 'r') as csv_file:
         msg['Subject'] = subject
         msg['From'] = name
         msg['To'] = row['email']
+
+        if verbose == True:
+            print msg.as_string()
 
         server.sendmail(username, [row['email']], msg.as_string())
         print "Email sent to: %s" % row['email']
