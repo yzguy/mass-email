@@ -52,14 +52,14 @@ Notice the `if statement` to handle there being a promo code or not, this is how
 ### Script Execution
 Executing the script is pretty straight forward, you only need to pass in two arguments, these being a path to Markdown file, and the CSV file.
 
-ex. `./mass-email.py ~/loyaltytemplate.md ~/loyaltydata.csv`
+ex. `./mass-email.py --markdown ~/loyaltytemplate.md --csv ~/loyaltydata.csv`
 
 You may enter `verbose` as the third argument to output the raw emails after they are sent.  
 After that, you will need to enter your Google Email credentials (they are not stored), and a Subject for the emails.
 
 ```
-root@host: ~$ ./mass-email.py example-template.md example-data.csv 
-Username: admin@admin.com
+root@host: ~$ ./mass-email.py --markdown example-template.md --csv example-data.csv 
+Username: username@gmail.com
 Password: 
 Subject: Yzguy Product Promo    
 Email sent to: asmith@smith.com

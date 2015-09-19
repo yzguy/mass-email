@@ -1,4 +1,4 @@
-#!venv/bin/python
+#!/usr/bin/python
 
 # Imports
 import markdown, sys, csv, getpass, smtplib, argparse
